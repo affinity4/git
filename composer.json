@@ -1,0 +1,28 @@
+{
+    "name": "affinity4/git",
+    "description": "PHP Git wrapper with Promise/A+ API",
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Luke Watts",
+            "email": "luke@affinity4.ie"
+        }
+    ],
+    "autoload": {
+        "psr-4": {
+            "Affinity4\\Git\\": "src/"
+        }
+    },
+    "repositories": [
+        {
+            "type": "vcs",
+            "url": "https://github.com/affinity4/process"
+        }
+    ],
+    "require": {
+        "affinity4/process": "dev-master"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^6.5"
+    }
+}
