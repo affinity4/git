@@ -17,10 +17,16 @@
         {
             "type": "vcs",
             "url": "https://github.com/affinity4/process"
+        },
+        {
+            "type": "vcs",
+            "url": "https://github.com/affinity4/promise"
         }
     ],
     "require": {
-        "affinity4/process": "dev-master"
+        "affinity4/process": "dev-master",
+        "affinity4/promise": "dev-master",
+        "react/promise": "^2.5"
     },
     "require-dev": {
         "phpunit/phpunit": "^6.5"

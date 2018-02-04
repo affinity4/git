@@ -3,22 +3,20 @@ namespace Affinity4\Git;
 
 use Affinity4\Process\Process;
 use Affinity4\Process\Command;
-use React\Promise\Promise;
+use Affinity4\Promise\PromiseTrait;
 use React\Promise\PromiseInterface;
 
 /**
  * Class Core
  *
  * @package Affinity4\Git
- *
- * @method then callable $callback
  */
-class Core
+class Core implements PromiseInterface
 {
-    public function __construct()
-    {
-        //
-    }
+    /**
+     * Provides Git::then method
+     */
+    use PromiseTrait;
 
     /**
      * --------------------------------------------------
@@ -33,10 +31,11 @@ class Core
      *
      * @return \React\Promise\FulfilledPromise|\React\Promise\Promise|\React\Promise\PromiseInterface|\React\Promise\RejectedPromise|static
      */
-    public function initBare($repo, $options = [])
+    public function initBare($repo, array $options = [])
     {
         $repo = $repo . '.git';
         $cmd = Command::create('git init ' . $repo, $options, ['--bare']);
+
         return Process::run($cmd);
     }
 }
